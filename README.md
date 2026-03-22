@@ -22,6 +22,50 @@ After setup, Claude Code can directly:
 
 ---
 
+## 怎么触发 / How to use it
+
+**这是 MCP，不是 Skill。两者触发方式完全不同：**
+
+| | MCP（本项目） | Skill |
+|---|---|---|
+| **是什么** | AI 能调用的工具函数 | 给 AI 看的指令文档 |
+| **怎么触发** | 直接说需求，AI 自动调用 | 说 `/skill名` 或匹配关键词 |
+| **需要触发词吗** | 不需要 | 需要 |
+| **存在哪** | Claude Code MCP 配置 | `~/.claude/skills/` |
+
+配置好之后，**直接用自然语言描述需求**即可，不需要任何命令或触发词：
+
+```
+"帮我找飞书里关于 OKR 的文档"
+"读一下飞书知识库里的产品设计规范"
+"列出知识库里所有文档"
+```
+
+Claude Code 会自动判断并调用对应工具（`search-doc` / `fetch-doc` / `list-docs`）。
+
+---
+
+**This is an MCP, not a Skill. They work differently:**
+
+| | MCP (this project) | Skill |
+|---|---|---|
+| **What it is** | Tool functions the AI can call | Instruction docs for the AI |
+| **How to trigger** | Just say what you need — AI calls it automatically | Say `/skill-name` or match keywords |
+| **Trigger word needed?** | No | Yes |
+| **Lives in** | Claude Code MCP config | `~/.claude/skills/` |
+
+Once configured, just **describe what you want in plain language** — no commands needed:
+
+```
+"Find the OKR document in my Feishu wiki"
+"Read the product design spec from my knowledge base"
+"List all documents in my wiki"
+```
+
+Claude Code automatically decides which tool to call (`search-doc` / `fetch-doc` / `list-docs`).
+
+---
+
 ## 前置准备 / Prerequisites
 
 | 项目 | 说明 |
